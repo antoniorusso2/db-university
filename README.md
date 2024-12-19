@@ -99,3 +99,8 @@ WHERE `id` = 58;
 ```
 
 ## 11. Eliminare dalla tabella studenti il record creato precedentemente al punto 9
+
+```SQL
+DELETE FROM `students`
+WHERE `id` = 5001;
+```
