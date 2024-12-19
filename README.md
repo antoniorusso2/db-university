@@ -27,13 +27,13 @@ WHERE `cfu` > 10;
 ## 3. Selezionare tutti gli studenti che hanno più di 30 anni
 
 ```SQL
-SELECT date_of_birth, name, YEAR(current_date()) - YEAR(`date_of_birth`) AS age
+SELECT `date_of_birth`, `name`, YEAR(current_date()) - YEAR(`date_of_birth`) AS `age`
 FROM `students`
 WHERE YEAR(current_date()) - YEAR(`date_of_birth`) > 30;
 
-SELECT *
+SELECT *, TIMESTAMPDIFF(YEAR, `date_of_birth`, CURDATE()) AS `age`
 FROM `students`
-WHERE 2024 - YEAR(`date_of_birth`) > 30;
+WHERE TIMESTAMPDIFF(YEAR, `date_of_birth`, CURDATE()) > 30
 ```
 
 ## 4. Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di laurea (286)
